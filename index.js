@@ -2,8 +2,8 @@ var request = require('request');
 var express = require('express');
 var app = express();
 
+var times = 0;
 var getSite =  function(){
-  var times = 0;
   request(process.env.SITE, function (error, response, body) {
     if (error) {
       console.log("Error: " + error);
@@ -14,9 +14,11 @@ var getSite =  function(){
   })
 };
 
-setInterval(getSite ,1000*10);
-// setInterval(getSite ,1000*60*25);
+// setInterval(getSite ,1000*10);
+// open site every 25 min
+setInterval(getSite ,1000*60*25);
 setTimeout(getSite ,3000);
+setTimeout(getSite ,15000);
 
 
 var port = process.env.PORT || 8080;
