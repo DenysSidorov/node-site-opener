@@ -14,7 +14,8 @@ var getSite =  function(){
   })
 };
 
-setInterval(getSite ,1000*60*25);
+setInterval(getSite ,1000*10);
+// setInterval(getSite ,1000*60*25);
 setTimeout(getSite ,3000);
 
 
